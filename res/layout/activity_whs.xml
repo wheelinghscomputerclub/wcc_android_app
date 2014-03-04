@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="left"
+    tools:context=".WHS"
+     >
+
+    <Button
+        android:id="@+id/buttonNews"
+        android:layout_width="181dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/bTopNews"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/buttonAnnouncements"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonEvents"
+        android:text="@string/bAnnouncements"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/buttonEvents"
+        android:layout_width="181dp"
+        android:layout_height="182dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/bEvents"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/buttonWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/buttonAnnouncements"
+        android:text="@string/bWebsite"
+        android:textSize="25sp" />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
