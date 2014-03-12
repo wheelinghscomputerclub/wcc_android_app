@@ -23,6 +23,7 @@ public class News extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_news);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		//getActionBar().setListNavigationCallbacks(adapter, callback)
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listNews);
         setListAdapter(adapter);
