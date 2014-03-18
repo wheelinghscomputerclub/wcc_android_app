@@ -4,67 +4,36 @@ import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 public class Events extends ListActivity {
-	
-	/*public String[] listEvents = {
-			"THURSDAY, FEBRUARY 20, 2014",
-	        "TUESDAY, FEBRUARY 25, 2014",
-	        "THURSDAY, FEBRUARY 27, 2014",
-	        "THURSDAY, FEBRUARY 27, 2014",
-	        "FEBRUARY 28, 2014",
-	        "MARCH 01, 2014",
-	        "MARCH 06, 2014",
-	        "MARCH 06, 2014"
-	};*/
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_events);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
-		try{
-		URL upcomingEvents = new URL("http://1.wccsandbox.appspot.com/wcc_prototype");
-		HttpURLConnection connection = (HttpURLConnection) upcomingEvents.openConnection();
-		
-		connection.connect();
-		InputStream inputStream = connection.getInputStream();
-		
-		byte[] response = new byte[inputStream.available()];
-		
-		inputStream.read(response);
-		String responseJSon = new String(response);
-			
-		Gson gson = new GsonBuilder().create();
-		//gson.fromJson(response, String[].class);
-		Type type = new TypeToken<String[]>(){}.getType();
-		
-		String[] listEvents = gson.fromJson(responseJSon, type);
-		
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listEvents);
-        setListAdapter(adapter);
-		} catch(Exception e)
-		{
-			Toast toast = Toast.makeText(getApplicationContext(), "Can't find data", Toast.LENGTH_SHORT);
-			toast.show();
-			e.printStackTrace();
-		}
-		
+		GetJSon getIt = new GetJSon();
+		getIt.execute("");
+
+		//Toast toast = Toast.makeText(getApplicationContext(), "Can't find data", Toast.LENGTH_SHORT);
+		//toast.show();
+	
 	}
 	//test
 	@Override
@@ -91,6 +60,55 @@ public class Events extends ListActivity {
 		startActivity(intent);
 		return true;
 	}
+	
+
+	public class GetJSon extends AsyncTask <String, Integer, Long>{
+		
+		private UpcomingEvent[] listEvents;
+
+		@Override
+		protected Long doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			
+			try{
+				URL upcomingEvents = new URL("http://1.wccsandbox.appspot.com/wcc_prototype");
+				HttpURLConnection connection = (HttpURLConnection) upcomingEvents.openConnection();
+				
+				connection.connect();
+				InputStream inputStream = connection.getInputStream();
+				
+				byte[] response = new byte[inputStream.available()];
+				
+				inputStream.read(response);
+				String responseJSon = new String(response);
+					
+				Gson gson = new GsonBuilder().create();
+				//gson.fromJson(response, String[].class);
+				Type type = new TypeToken<UpcomingEvent[]>(){}.getType();
+				
+				listEvents = gson.fromJson(responseJSon, type);
+				//System.out.println(listEvents.length);
+				
+			} catch(Exception e){			
+			}	
+			
+			return null;
+			}
+		
+			@Override
+			protected void onPostExecute(Long result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			List<String> temp = new ArrayList<String>();
+			for (UpcomingEvent event: listEvents){
+				temp.add(event.eventTitle);
+			}
+			ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
+	        setListAdapter(adapter);
+		}
+		
+	}
+
 }
 
 
