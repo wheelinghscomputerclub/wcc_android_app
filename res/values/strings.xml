@@ -7,7 +7,7 @@
     <string name="hello_world">testing worlds</string>
     <string name="bWebsite">Website</string>
     <string name="bTopNews">Top News</string>
-    <string name="bEvents">Upcoming Events</string>
+    <string name="bEvents">Events</string>
     <string name="bAnnouncements">Announcements</string>
     <string name="title_activity_news">Top News</string>
     <string name="title_activity_events">Upcoming Events</string>
@@ -42,5 +42,6 @@
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

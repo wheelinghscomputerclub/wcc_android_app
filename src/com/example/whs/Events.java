@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -33,17 +35,17 @@ public class Events extends ListActivity {
 
 		//Toast toast = Toast.makeText(getApplicationContext(), "Can't find data", Toast.LENGTH_SHORT);
 		//toast.show();
-	
+
 	}
 	//test
 	@Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-    	super.onListItemClick(l, v, position, id);
-    		
-			Intent intent = new Intent(Events.this, Read.class);
-			startActivity(intent);
-    	
-    }
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+
+		Intent intent = new Intent(Events.this, Read.class);
+		startActivity(intent);
+
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,72 +57,53 @@ public class Events extends ListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
-		
+
 		Intent intent = new Intent(Events.this, WHS.class);
-		startActivity(intent);
+		finish();
 		return true;
 	}
-	
+
 
 	public class GetJSon extends AsyncTask <String, Integer, Long>{
-		
+
 		private UpcomingEvent[] listEvents;
 
 		@Override
 		protected Long doInBackground(String... params) {
-			// TODO Auto-generated method stub
-			
 			try{
 				URL upcomingEvents = new URL("http://1.wccsandbox.appspot.com/wcc_prototype");
 				HttpURLConnection connection = (HttpURLConnection) upcomingEvents.openConnection();
-				
+
 				connection.connect();
+
 				InputStream inputStream = connection.getInputStream();
-				
-				byte[] response = new byte[inputStream.available()];
-				
-				inputStream.read(response);
-				String responseJSon = new String(response);
-					
-				Gson gson = new GsonBuilder().create();
-				//gson.fromJson(response, String[].class);
-				Type type = new TypeToken<UpcomingEvent[]>(){}.getType();
-				
-				listEvents = gson.fromJson(responseJSon, type);
-				//System.out.println(listEvents.length);
-				
+				if (connection.getResponseCode() == 200 && inputStream != null) {
+					String responseJson = IOUtils.toString(inputStream);
+
+					Gson gson = new GsonBuilder().create();
+					Type type = new TypeToken<UpcomingEvent[]>(){}.getType();
+
+					listEvents = gson.fromJson(responseJson, type);
+				} else {
+					listEvents = new UpcomingEvent[]{};
+				}
 			} catch(Exception e){			
 			}	
-			
+
 			return null;
-			}
-		
-			@Override
-			protected void onPostExecute(Long result) {
-			// TODO Auto-generated method stub
+		}
+
+		@Override
+		protected void onPostExecute(Long result) {
 			super.onPostExecute(result);
 			List<String> temp = new ArrayList<String>();
 			for (UpcomingEvent event: listEvents){
 				temp.add(event.eventTitle);
 			}
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
-	        setListAdapter(adapter);
+			setListAdapter(adapter);
 		}
-		
+
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -163,7 +163,7 @@ public class WHS extends Activity {
 			editor.putString("language", "russian");
 		}else
 		{
-			Intent intent = new Intent(WHS.this, Settings.class);
+			Intent intent = new Intent(WHS.this, News.class);
 			startActivity(intent);
 		}
 		editor.commit();

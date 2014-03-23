@@ -3,35 +3,36 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:gravity="left"
-    tools:context=".WHS"
-     >
+    tools:context=".WHS" >
 
-    <Button
-        android:id="@+id/buttonNews"
-        android:layout_width="181dp"
-        android:layout_height="182dp"
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="@string/bTopNews"
-        android:textSize="25sp" />
+        android:stretchColumns="*" >
 
-    <Button
-        android:id="@+id/buttonAnnouncements"
-        android:layout_width="match_parent"
-        android:layout_height="182dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/buttonEvents"
-        android:text="@string/bAnnouncements"
-        android:textSize="25sp" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/buttonEvents"
-        android:layout_width="181dp"
-        android:layout_height="182dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/bEvents"
-        android:textSize="25sp" />
+            <Button
+                android:id="@+id/buttonNews"
+                android:layout_width="fill_parent"
+                android:layout_height="182dp"
+                android:text="@string/bTopNews"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/buttonEvents"
+                android:layout_width="fill_parent"
+                android:layout_height="182dp"
+                android:text="@string/bEvents"
+                android:textSize="25sp" />
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/buttonWebsite"
@@ -42,25 +43,13 @@
         android:text="@string/bWebsite"
         android:textSize="25sp" />
 
+    <Button
+        android:id="@+id/buttonAnnouncements"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableLayout1"
+        android:text="@string/bAnnouncements"
+        android:textSize="25sp" />
+
 </RelativeLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

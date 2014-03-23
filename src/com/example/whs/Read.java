@@ -25,8 +25,7 @@ public class Read extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 		
-		Intent intent = new Intent(Read.this, WHS.class);
-		startActivity(intent);
+		finish();
 		return true;
 	}
 

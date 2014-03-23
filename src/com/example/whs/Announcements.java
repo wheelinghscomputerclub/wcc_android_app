@@ -49,8 +49,7 @@ public class Announcements extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 		
-		Intent intent = new Intent(Announcements.this, WHS.class);
-		startActivity(intent);
+		finish();
 		return true;
 	}
 
