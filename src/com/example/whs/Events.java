@@ -48,8 +48,7 @@ public class Events extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 
-		Intent intent = new Intent(Events.this, Read.class);
-		startActivity(intent);
+		
 
 	}
 
@@ -102,15 +101,34 @@ public class Events extends ListActivity {
 		@Override
 		protected void onPostExecute(Long result) {
 			super.onPostExecute(result);
-			List<String> temp = new ArrayList<String>();
+			
+			//List<String> temp = new ArrayList<String>();
+			
+			List<UpcomingEvent> temp = new ArrayList<UpcomingEvent>();
+			
 			for (UpcomingEvent event: listEvents){
-				temp.add(event.eventTitle);
+				//temp.add(event.eventTitle);
+				temp.add(event);
 			}
-			ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
 			load.setVisibility(0X00000004);
+			
+			//EventsListAdapter adapter = new EventsListAdapter(getListView().getContext(), temp);
+			//ArrayAdapter<EventsListAdapter> adapter = new ArrayAdapter<EventsListAdapter>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new EventsListAdapter[]{}));
+			
+			EventsListAdapter adapter = new EventsListAdapter(getListView().getContext(), temp);
+			
+			//ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
 			setListAdapter(adapter);
 		}
 
 	}
+
+
+
+
+
+
+
+
 
 }
