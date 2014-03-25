@@ -18,18 +18,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 public class Events extends ListActivity {
+	
+	private ProgressBar load;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_events);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		load = (ProgressBar) findViewById(R.id.progressBar1);
+		
 		GetJSon getIt = new GetJSon();
 		getIt.execute("");
 
@@ -101,6 +107,7 @@ public class Events extends ListActivity {
 				temp.add(event.eventTitle);
 			}
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
+			load.setVisibility(0X00000004);
 			setListAdapter(adapter);
 		}
 
