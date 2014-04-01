@@ -9,10 +9,7 @@ import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 
-<<<<<<< HEAD
 import android.app.AlertDialog;
-=======
->>>>>>> 2e55e46298c5556cf490a472eb638e593718d7b8
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -56,7 +53,6 @@ public class Events extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 
-<<<<<<< HEAD
 		UpcomingEvent event = listEvents[position];
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -95,10 +91,6 @@ public class Events extends ListActivity {
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	
-=======
-		Intent intent = new Intent(Events.this, Read.class);
-		startActivity(intent);
->>>>>>> 2e55e46298c5556cf490a472eb638e593718d7b8
 
 	}
 
@@ -113,23 +105,14 @@ public class Events extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 
-<<<<<<< HEAD
 		finish();
-=======
-		Intent intent = new Intent(Events.this, WHS.class);
-		startActivity(intent);
->>>>>>> 2e55e46298c5556cf490a472eb638e593718d7b8
 		return true;
 	}
 
 
 	public class GetJSon extends AsyncTask <String, Integer, Long>{
 
-<<<<<<< HEAD
 		//private UpcomingEvent[] listEvents;
-=======
-		private UpcomingEvent[] listEvents;
->>>>>>> 2e55e46298c5556cf490a472eb638e593718d7b8
 
 		@Override
 		protected Long doInBackground(String... params) {
@@ -168,7 +151,6 @@ public class Events extends ListActivity {
 				//temp.add(event.eventTitle);
 				temp.add(event);
 			}
-<<<<<<< HEAD
 			load.setVisibility(0X00000004);
 			
 			//EventsListAdapter adapter = new EventsListAdapter(getListView().getContext(), temp);
@@ -179,19 +161,6 @@ public class Events extends ListActivity {
 			//ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
 			setListAdapter(adapter);
 		}
-=======
-			ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.toArray(new String[]{}));
-			setListAdapter(adapter);
-		}
-
-	}
-
-}
-
-
-
-
->>>>>>> 2e55e46298c5556cf490a472eb638e593718d7b8
 
 	}
 
