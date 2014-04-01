@@ -20,14 +20,14 @@
 
             <Button
                 android:id="@+id/buttonNews"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="182dp"
                 android:text="@string/bTopNews"
                 android:textSize="25sp" />
 
             <Button
                 android:id="@+id/buttonEvents"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="182dp"
                 android:text="@string/bEvents"
                 android:textSize="25sp" />

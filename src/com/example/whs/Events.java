@@ -9,16 +9,20 @@ import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -27,6 +31,7 @@ import com.google.gson.reflect.TypeToken;
 public class Events extends ListActivity {
 	
 	private ProgressBar load;
+	private UpcomingEvent[] listEvents;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +48,49 @@ public class Events extends ListActivity {
 		//toast.show();
 
 	}
-	//test
+
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 
+		UpcomingEvent event = listEvents[position];
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		//LayoutInflater inflater = this.getLayoutInflater();
 		
+		builder.setTitle(event.eventDate);
+		builder.setMessage(event.eventTitle);
+		
+		//final TextView dialogTitle = (TextView) findViewById(R.id.dialogTitle);
+		//final TextView dialogMessage = (TextView) findViewById(R.id.dialogMessage);
+		
+		//builder.setView(inflater.inflate(R.layout.events_dialog, null));
+		//builder.setCustomTitle(inflater.inflate(R.layout.dialog_title, null));
+		
+		//dialogTitle.setText("test");
+		//dialogMessage.setText("testing");
+		
+		builder.setPositiveButton("Save Event", new OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		builder.setNegativeButton("Close", new OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		
+		AlertDialog dialog = builder.create();
+		dialog.show();
+	
 
 	}
 
@@ -63,7 +105,6 @@ public class Events extends ListActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
 
-		Intent intent = new Intent(Events.this, WHS.class);
 		finish();
 		return true;
 	}
@@ -71,7 +112,7 @@ public class Events extends ListActivity {
 
 	public class GetJSon extends AsyncTask <String, Integer, Long>{
 
-		private UpcomingEvent[] listEvents;
+		//private UpcomingEvent[] listEvents;
 
 		@Override
 		protected Long doInBackground(String... params) {
