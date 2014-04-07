@@ -8,5 +8,12 @@
         android:title="Settings"
         android:icon="@drawable/ic_action_settings"/>
     
+    <item
+        android:id="@+id/action_Home"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Home"
+        android:icon="@drawable/ic_action_home"/>
+    
 
 </menu>

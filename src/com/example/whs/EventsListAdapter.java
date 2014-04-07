@@ -41,14 +41,10 @@ public class EventsListAdapter extends ArrayAdapter<UpcomingEvent>{
 			holder.titleLabel.setText(event.eventTitle);}
 		holder.dateLabel.setText(event.eventDate);
 		holder.calendarDate.setText(event.eventDate.substring(event.eventDate.length() - 8, event.eventDate.length() - 6));
-		if (event.eventDate.substring(0, 2).equalsIgnoreCase("su") || event.eventDate.substring(0, 2).equalsIgnoreCase("fr"))
+		if (event.eventDate.substring(0, 2).equalsIgnoreCase("tu") || event.eventDate.substring(0, 2).equalsIgnoreCase("fr"))
 			holder.calendarImage.setImageResource(R.drawable.calendar_red);
-		else if(event.eventDate.substring(0, 2).equalsIgnoreCase("mo") || event.eventDate.substring(0, 2).equalsIgnoreCase("sa"))
+		else if(event.eventDate.substring(0, 2).equalsIgnoreCase("mo") || event.eventDate.substring(0, 2).equalsIgnoreCase("we"))
 			holder.calendarImage.setImageResource(R.drawable.calendar_blue);
-		else if(event.eventDate.substring(0, 2).equalsIgnoreCase("tu"))
-			holder.calendarImage.setImageResource(R.drawable.calendar_yellow);
-		else if(event.eventDate.substring(0, 2).equalsIgnoreCase("we"))
-			holder.calendarImage.setImageResource(R.drawable.calendar_purple);
 		else
 			holder.calendarImage.setImageResource(R.drawable.calendar_green);
 

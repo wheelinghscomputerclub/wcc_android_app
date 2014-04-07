@@ -20,14 +20,12 @@
         <item>Moodle</item>
         <item>About Wheeling</item>
     </string-array>
-    
     <string-array name="website_choices_sophmore">
         <item>Homepage</item>
         <item>Calendar</item>
         <item>Homelogic</item>
         <item>Moodle</item>
     </string-array>
-    
     <string-array name="website_choices_junior">
         <item>Homepage</item>
         <item>Calendar</item>
@@ -36,7 +34,6 @@
         <item>College Resources</item>
         <item>ACT</item>
     </string-array>
-    
     <string-array name="website_choices_senior">
         <item>Homepage</item>
         <item>Calendar</item>
@@ -44,14 +41,18 @@
         <item>Moodle</item>
         <item>College Resources</item>
     </string-array>
-    
     <string-array name="News">
         <item>Wheeling High School Orchesis Annual Concert</item>
         <item>Wheeling High School MAth Team Wins District Meet</item>
         <item>Wheeling Dance Teacher To Recieve The 2014 Ruth Page Award</item>
         <item>The SisterHood Of the Traveling Dress</item>
     </string-array>
-
+	
+    <string name="title_home">Home</string>
+    <string name="title_events">Events</string>
+    <string name="title_announcements">Announcements</string>
+    <string name="title_news">Top News</string>
+    
     <string name="title_activity_read">Read</string>
     <string name="action_english">English</string>
     <string name="action_spanish">Spanish</string>
@@ -70,24 +71,13 @@
     <string name="title_section3">Section 3</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_change_settings">Settings</string>
-    
+
     <string-array name="events_choices">
         <item>Save Event</item>
         <item>Cancel</item>
-        <item android:layout_height="wrap_content" android:id="@+id/item1" android:layout_width="wrap_content"/>
+        <item android:id="@+id/item1" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
     </string-array>
 
+    <string name="title_activity_whs__home">WHS</string>
+
 </resources>
-
-
-
-
-
-
-
-
-
-
-
-
-

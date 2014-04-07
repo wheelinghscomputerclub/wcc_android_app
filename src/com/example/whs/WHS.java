@@ -181,7 +181,7 @@ public class WHS extends Activity {
 			editor.putString("language", "Russian");
 		}else
 		{*/
-			Intent intent = new Intent(WHS.this, ChangeSettings.class);
+			Intent intent = new Intent(WHS.this, WHS_Home.class);
 			startActivity(intent);
 		/*}
 		editor.commit();

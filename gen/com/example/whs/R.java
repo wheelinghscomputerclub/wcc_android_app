@@ -25,6 +25,11 @@ public final class R {
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
@@ -37,35 +42,47 @@ public final class R {
         public static final int calendar=0x7f020001;
         public static final int calendar_blue=0x7f020002;
         public static final int calendar_green=0x7f020003;
-        public static final int calendar_purple=0x7f020004;
-        public static final int calendar_red=0x7f020005;
-        public static final int calendar_yellow=0x7f020006;
-        public static final int ic_action_save=0x7f020007;
-        public static final int ic_action_settings=0x7f020008;
-        public static final int ic_launcher=0x7f020009;
-        public static final int whs_app_icon=0x7f02000a;
+        public static final int calendar_icon=0x7f020004;
+        public static final int calendar_purple=0x7f020005;
+        public static final int calendar_red=0x7f020006;
+        public static final int calendar_yellow=0x7f020007;
+        public static final int familyconnection=0x7f020008;
+        public static final int homelogic=0x7f020009;
+        public static final int ic_action_home=0x7f02000a;
+        public static final int ic_action_save=0x7f02000b;
+        public static final int ic_action_settings=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int moodle=0x7f02000e;
+        public static final int view_dropshadow=0x7f02000f;
+        public static final int whs=0x7f020010;
+        public static final int whs_app_icon=0x7f020011;
     }
     public static final class id {
-        public static final int action_Setting=0x7f0a0013;
-        public static final int action_home=0x7f0a0012;
-        public static final int action_save=0x7f0a0011;
+        public static final int action_Home=0x7f0a0018;
+        public static final int action_Setting=0x7f0a0017;
+        public static final int action_home=0x7f0a0016;
+        public static final int action_save=0x7f0a0015;
         public static final int buttonAnnouncements=0x7f0a0007;
         public static final int buttonEvents=0x7f0a0005;
         public static final int buttonNews=0x7f0a0004;
         public static final int buttonWebsite=0x7f0a0006;
-        public static final int checkBox1=0x7f0a0010;
-        public static final int dialogMessage=0x7f0a0009;
-        public static final int dialogTitle=0x7f0a0008;
-        public static final int imageViewCalendar=0x7f0a000b;
+        public static final int checkBox1=0x7f0a0012;
+        public static final int dialogMessage=0x7f0a000a;
+        public static final int dialogTitle=0x7f0a0009;
+        public static final int imageView1=0x7f0a0010;
+        public static final int imageViewCalendar=0x7f0a000c;
         public static final int pager=0x7f0a0001;
+        public static final int pager_title_strip=0x7f0a0008;
         public static final int progressBar1=0x7f0a0000;
-        public static final int realativeLayot=0x7f0a000a;
+        public static final int realativeLayot=0x7f0a000b;
         public static final int tableLayout1=0x7f0a0002;
         public static final int tableRow1=0x7f0a0003;
-        public static final int textViewCalendarDate=0x7f0a000e;
-        public static final int textViewDate=0x7f0a000c;
-        public static final int textViewDetails=0x7f0a000f;
-        public static final int textViewTitle=0x7f0a000d;
+        public static final int textViewCalendarDate=0x7f0a000f;
+        public static final int textViewDate=0x7f0a000d;
+        public static final int textViewDetails=0x7f0a0011;
+        public static final int textViewTitle=0x7f0a000e;
+        public static final int webSiteTitle=0x7f0a0014;
+        public static final int webSiteimage=0x7f0a0013;
     }
     public static final class layout {
         public static final int activity_announcements=0x7f030000;
@@ -75,10 +92,14 @@ public final class R {
         public static final int activity_news=0x7f030004;
         public static final int activity_read=0x7f030005;
         public static final int activity_whs=0x7f030006;
-        public static final int dialog_title=0x7f030007;
-        public static final int events_dialog=0x7f030008;
-        public static final int events_list=0x7f030009;
-        public static final int settings_list=0x7f03000a;
+        public static final int activity_whs__home=0x7f030007;
+        public static final int dialog_title=0x7f030008;
+        public static final int events_dialog=0x7f030009;
+        public static final int events_list=0x7f03000a;
+        public static final int home_screen1=0x7f03000b;
+        public static final int homescreen2=0x7f03000c;
+        public static final int settings_list=0x7f03000d;
+        public static final int websites_list=0x7f03000e;
     }
     public static final class menu {
         public static final int announcements=0x7f090000;
@@ -87,58 +108,64 @@ public final class R {
         public static final int news=0x7f090003;
         public static final int read=0x7f090004;
         public static final int whs=0x7f090005;
+        public static final int whs__home=0x7f090006;
     }
     public static final class string {
-        public static final int action_english=0x7f06000c;
+        public static final int action_english=0x7f060010;
         public static final int action_home=0x7f060002;
-        public static final int action_russian=0x7f06000e;
+        public static final int action_russian=0x7f060012;
         public static final int action_settings=0x7f060001;
-        public static final int action_spanish=0x7f06000d;
+        public static final int action_spanish=0x7f060011;
         public static final int app_name=0x7f060000;
         public static final int bAnnouncements=0x7f060007;
-        public static final int bAnnouncements_Russian=0x7f060014;
-        public static final int bAnnouncements_Spanish=0x7f060010;
+        public static final int bAnnouncements_Russian=0x7f060018;
+        public static final int bAnnouncements_Spanish=0x7f060014;
         public static final int bEvents=0x7f060006;
-        public static final int bEvents_Russian=0x7f060016;
-        public static final int bEvents_Spanish=0x7f060012;
+        public static final int bEvents_Russian=0x7f06001a;
+        public static final int bEvents_Spanish=0x7f060016;
         public static final int bTopNews=0x7f060005;
-        public static final int bTopNews_Russian=0x7f060015;
-        public static final int bTopNews_Spanish=0x7f060011;
+        public static final int bTopNews_Russian=0x7f060019;
+        public static final int bTopNews_Spanish=0x7f060015;
         public static final int bWebsite=0x7f060004;
-        public static final int bWebsite_Russian=0x7f060013;
-        public static final int bWebsite_Spanish=0x7f06000f;
+        public static final int bWebsite_Russian=0x7f060017;
+        public static final int bWebsite_Spanish=0x7f060013;
         public static final int hello_world=0x7f060003;
-        public static final int pref_default_display_name=0x7f060021;
-        public static final int pref_description_social_recommendations=0x7f06001f;
+        public static final int pref_default_display_name=0x7f060026;
+        public static final int pref_description_social_recommendations=0x7f060024;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f060023;
+        public static final int pref_header_data_sync=0x7f060028;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f06001d;
+        public static final int pref_header_general=0x7f060022;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f060026;
-        public static final int pref_ringtone_silent=0x7f060029;
-        public static final int pref_title_add_friends_to_messages=0x7f060022;
-        public static final int pref_title_display_name=0x7f060020;
-        public static final int pref_title_new_message_notifications=0x7f060027;
-        public static final int pref_title_ringtone=0x7f060028;
-        public static final int pref_title_social_recommendations=0x7f06001e;
-        public static final int pref_title_sync_frequency=0x7f060024;
-        public static final int pref_title_system_sync_settings=0x7f060025;
-        public static final int pref_title_vibrate=0x7f06002a;
+        public static final int pref_header_notifications=0x7f06002b;
+        public static final int pref_ringtone_silent=0x7f06002e;
+        public static final int pref_title_add_friends_to_messages=0x7f060027;
+        public static final int pref_title_display_name=0x7f060025;
+        public static final int pref_title_new_message_notifications=0x7f06002c;
+        public static final int pref_title_ringtone=0x7f06002d;
+        public static final int pref_title_social_recommendations=0x7f060023;
+        public static final int pref_title_sync_frequency=0x7f060029;
+        public static final int pref_title_system_sync_settings=0x7f06002a;
+        public static final int pref_title_vibrate=0x7f06002f;
         public static final int title_activity_announcements=0x7f06000a;
-        public static final int title_activity_change_settings=0x7f06001c;
+        public static final int title_activity_change_settings=0x7f060020;
         public static final int title_activity_events=0x7f060009;
-        public static final int title_activity_navigate=0x7f060017;
+        public static final int title_activity_navigate=0x7f06001b;
         public static final int title_activity_news=0x7f060008;
-        public static final int title_activity_read=0x7f06000b;
-        public static final int title_activity_settings=0x7f06001b;
-        public static final int title_section1=0x7f060018;
-        public static final int title_section2=0x7f060019;
-        public static final int title_section3=0x7f06001a;
+        public static final int title_activity_read=0x7f06000f;
+        public static final int title_activity_settings=0x7f06001f;
+        public static final int title_activity_whs__home=0x7f060021;
+        public static final int title_announcements=0x7f06000d;
+        public static final int title_events=0x7f06000c;
+        public static final int title_home=0x7f06000b;
+        public static final int title_news=0x7f06000e;
+        public static final int title_section1=0x7f06001c;
+        public static final int title_section2=0x7f06001d;
+        public static final int title_section3=0x7f06001e;
     }
     public static final class style {
         /** 

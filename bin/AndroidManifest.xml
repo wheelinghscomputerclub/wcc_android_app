@@ -64,6 +64,10 @@
             android:name="com.example.whs.ChangeSettings"
             android:label="@string/title_activity_change_settings" >
         </activity>
+        <activity
+            android:name="com.example.whs.WHS_Home"
+            android:label="@string/title_activity_whs__home" >
+        </activity>
     </application>
 
 </manifest>
