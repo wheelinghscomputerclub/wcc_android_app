@@ -2,15 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eeeeee"
     tools:context=".Events" >
     
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF" >
+
     </ListView>
+    
+    <View 
+        android:id="@+id/shadow1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bbbbbb"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@android:id/list"
+        android:layout_centerInParent="true"
+        />
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -19,5 +38,80 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
+    
+    <View 
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:visibility="visible"
+        android:background="#FFFFFF"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@android:id/list"
+        
+        android:layout_centerInParent="true"
+        />
+    
+    <View 
+        android:id="@+id/breaker"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="#cfcfcf"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_below="@+id/labelDaysLeft"
+        android:layout_centerInParent="true"
+        />
+    
+    <View 
+        android:id="@+id/shadow2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bbbbbb"
+        android:layout_marginTop="-10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/view1"
+        android:layout_centerInParent="true"
+        />
+    
+ 
+
+    <TextView
+        android:id="@+id/labelEventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:layout_marginBottom="-45dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="22sp"
+        android:layout_above="@+id/view1"
+        android:text="Date" />
+    
+    <TextView
+        android:id="@+id/labelDaysLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#999999"
+        android:layout_below="@+id/labelEventDate"
+        android:text="3 days left" />
+
+    <TextView
+        android:id="@+id/labelEventMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="#565656"
+        android:layout_alignTop="@+id/breaker"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Message"
+        android:textSize="20sp" />
 
 </RelativeLayout>

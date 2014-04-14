@@ -15,6 +15,6 @@ public class UpcomingEvent
     @Override
     public String toString() {
     	// TODO Auto-generated method stub
-    	return eventDate + " " + eventTitle;
+    	return eventDate + ": " + eventTitle;
     }
 }

@@ -11,17 +11,16 @@ import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AnalogClock;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,8 +29,10 @@ import com.google.gson.reflect.TypeToken;
 public class HomeScreen2 extends ListFragment{
 	
 	private ProgressBar load;
+	public static String seminar = "test";
+	public static String date, message;
 	private UpcomingEvent[] listEvents;
-	private Event[] eventsList;
+	private TextView dateLabel, messageLabel;
 	public String[] listAnnouncements = {
 			"NO SCHOOL!",
 	        "2.18.14 Tuesday",
@@ -54,7 +55,8 @@ public class HomeScreen2 extends ListFragment{
 		super.onResume();
 		
 		load = (ProgressBar) getView().findViewById(R.id.progressBar1);
-		
+		dateLabel = (TextView) getView().findViewById(R.id.labelEventMessage);
+		messageLabel = (TextView) getView().findViewById(R.id.labelEventMessage);
 		GetJSon getIt = new GetJSon();
 		getIt.execute("");
 		
@@ -86,7 +88,7 @@ public class HomeScreen2 extends ListFragment{
 				} else {
 					listEvents = new UpcomingEvent[]{};
 				}
-			} catch(Exception e){			
+			} catch(Exception e){
 			}	
 
 			return null;
@@ -104,12 +106,15 @@ public class HomeScreen2 extends ListFragment{
 				//temp.add(event.eventTitle);
 				temp.add(event);
 			}
-			/*List<Event> showEvent = new ArrayList<Event>();
-			Event  newEvent;
-			for (UpcomingEvent event: temp){
-				 newEvent = new Event(event.eventDate, event.eventTitle, false);
-				showEvent.add(newEvent);
-			}*/
+
+			for (UpcomingEvent event: listEvents){
+				if(event.eventDate.substring(0, 2).equalsIgnoreCase("th")){
+					seminar = event.toString();
+				}
+				
+			}
+			date = listEvents[0].eventDate;
+			message = listEvents[0].eventTitle;
 			
 			load.setVisibility(0X00000004);
 			
@@ -121,16 +126,22 @@ public class HomeScreen2 extends ListFragment{
 			//ArrayAdapter<String> adapter = new ArrayAdapter<String>(Events.this, android.R.layout.simple_list_item_1, temp.);
 			setListAdapter(adapter);
 		}
-
+		
+	}
+	
+	public static String getSeminar(){
+		return seminar;
 	}
 	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 
-		//sEvent event = listEvents[position];
-
-		
+		UpcomingEvent event = listEvents[position];
+		//date = event.eventDate;
+		//message = event.eventTitle;
+		dateLabel.setText(event.eventDate);
+		messageLabel.setText(event.eventTitle);
 	
 
 	}

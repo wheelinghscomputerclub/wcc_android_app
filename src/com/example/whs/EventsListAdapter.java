@@ -3,6 +3,7 @@ package com.example.whs;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ public class EventsListAdapter extends ArrayAdapter<UpcomingEvent>{
 	
 	protected Context mContext;
 	protected List<UpcomingEvent> mEvents;
+	public String seminar = "";
 	
 	public EventsListAdapter(Context context, List<UpcomingEvent> events){
 		super(context, R.layout.events_list, events);
@@ -26,14 +28,16 @@ public class EventsListAdapter extends ArrayAdapter<UpcomingEvent>{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 		
-			convertView = LayoutInflater.from(mContext).inflate(R.layout.events_list, null);
-			holder = new ViewHolder();
-			holder.titleLabel = (TextView) convertView.findViewById(R.id.textViewTitle);
-			holder.dateLabel = (TextView) convertView.findViewById(R.id.textViewDate);
-			holder.calendarDate = (TextView) convertView.findViewById(R.id.textViewCalendarDate);
-			holder.calendarImage = (ImageView) convertView.findViewById(R.id.imageViewCalendar);
-			holder.background = (RelativeLayout) convertView.findViewById(R.id.realativeLayot);
-			
+		convertView = LayoutInflater.from(mContext).inflate(R.layout.events_list, null);
+		holder = new ViewHolder();
+		holder.titleLabel = (TextView) convertView.findViewById(R.id.textViewTitle);
+		holder.dateLabel = (TextView) convertView.findViewById(R.id.textViewDate);
+		holder.calendarDate = (TextView) convertView.findViewById(R.id.textViewCalendarDate);
+		holder.calendarImage = (ImageView) convertView.findViewById(R.id.imageViewCalendar);
+		holder.background = (RelativeLayout) convertView.findViewById(R.id.realativeLayot);
+		
+
+		
 		UpcomingEvent event = mEvents.get(position);
 		if (event.eventTitle.length() >= 32){
 			holder.titleLabel.setText(event.eventTitle.substring(0, 32) + "...");}
@@ -47,8 +51,11 @@ public class EventsListAdapter extends ArrayAdapter<UpcomingEvent>{
 			holder.calendarImage.setImageResource(R.drawable.calendar_blue);
 		else
 			holder.calendarImage.setImageResource(R.drawable.calendar_green);
-
 		
+		if (event.eventDate.substring(0, 2).equalsIgnoreCase("th")){
+			seminar = event.toString();
+		}
+		//ksfdahcx
 		return convertView;
 	}
 	

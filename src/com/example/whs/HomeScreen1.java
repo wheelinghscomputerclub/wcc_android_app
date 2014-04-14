@@ -46,7 +46,7 @@ public class HomeScreen1 extends ListFragment{
 		//ArrayAdapter<String> adapter = new ArrayAdapter<String>(getView().getContext(), android.R.layout.simple_list_item_1, webSites);
 		WebSitesAdapter adapter = new WebSitesAdapter(getListView().getContext(), webSites);
 		setListAdapter(adapter);
-				
+				//sag
 	}
 	
 	@Override
