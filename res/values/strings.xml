@@ -47,13 +47,12 @@
         <item>Wheeling Dance Teacher To Recieve The 2014 Ruth Page Award</item>
         <item>The SisterHood Of the Traveling Dress</item>
     </string-array>
-	
+
     <string name="title_home">Home</string>
     <string name="title_events">Events</string>
     <string name="title_announcements">Announcements</string>
     <string name="title_news">Top News</string>
-    
-    <string name="title_activity_read">Read</string>
+    <string name="title_activity_read"></string>
     <string name="action_english">English</string>
     <string name="action_spanish">Spanish</string>
     <string name="action_russian">Russian</string>
@@ -66,9 +65,13 @@
     <string name="bTopNews_Russian">Главные новости</string>
     <string name="bEvents_Russian">Предстоящие события</string>
     <string name="title_activity_navigate">Navigate</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Regular Schedule</string>
+    <string name="title_section2">Gold Late Start</string>
+    <string name="title_section3">Blue Late Start</string>
+    <string name="title_section4">Exam Day 1</string>
+    <string name="title_section5">Exam Day 2</string>
+    <string name="title_section6">May Reading</string>
+    <string name="title_section7">May Late Start</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_change_settings">Settings</string>
 
@@ -79,5 +82,12 @@
     </string-array>
 
     <string name="title_activity_whs__home">WHS</string>
+    <string name="title_activity_scedule">Schedule</string>
+    <string name="title_activity_schedule">Schedule</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="title_activity_about">About Us</string>
+    <string name="title_activity_schedule2">Schedule2</string>
 
 </resources>

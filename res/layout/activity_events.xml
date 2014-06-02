@@ -23,13 +23,45 @@
         android:id="@+id/shadow1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#bbbbbb"
-        android:layout_marginTop="-5dp"
+        android:background="#eeeeee"
+        android:layout_marginTop="-10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_below="@android:id/list"
         android:layout_centerInParent="true"
         />
+    
+    <View 
+        android:id="@+id/onlineBox"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/shadow1"
+        android:background="#ffffff"/>
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/onlineBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:textSize="17sp"
+        android:textColor="#575757"
+        android:text="View Events Online" />
+    
+    <View 
+        android:id="@+id/shadow2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#bbbbbb"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/onlineBox"
+        android:layout_centerInParent="true"
+        />
+    
 
     <ProgressBar
         android:id="@+id/progressBar1"
@@ -40,25 +72,25 @@
         android:layout_centerVertical="true" />
     
     <View 
-        android:id="@+id/view1"
+        android:id="@+id/eventView"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:background="#FFFFFF"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@android:id/list"
-        
+        android:layout_below="@+id/shadow2"
         android:layout_centerInParent="true"
         />
     
     <View 
-        android:id="@+id/breaker"
+        android:id="@+id/eventBreaker"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginBottom="10dp"
+        android:visibility="invisible"
         android:background="#cfcfcf"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
@@ -67,14 +99,15 @@
         />
     
     <View 
-        android:id="@+id/shadow2"
+        android:id="@+id/evetShadow2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#bbbbbb"
+        android:visibility="invisible"
         android:layout_marginTop="-10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_below="@+id/view1"
+        android:layout_below="@+id/eventView"
         android:layout_centerInParent="true"
         />
     
@@ -85,10 +118,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#555555"
+        android:visibility="invisible"
         android:layout_marginBottom="-45dp"
         android:layout_centerHorizontal="true"
         android:textSize="22sp"
-        android:layout_above="@+id/view1"
+        android:layout_above="@+id/eventView"
         android:text="Date" />
     
     <TextView
@@ -96,6 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
+        android:visibility="invisible"
         android:textSize="17sp"
         android:layout_centerHorizontal="true"
         android:textColor="#999999"
@@ -107,11 +142,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:visibility="invisible"
         android:textColor="#565656"
-        android:layout_alignTop="@+id/breaker"
+        android:layout_alignTop="@+id/eventBreaker"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:text="Message"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/reload1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:textColor="#999999"
+        android:textSize="17sp"
+        android:text="Reload" />
 
 </RelativeLayout>
