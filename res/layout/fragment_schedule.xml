@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.d214.whs.wcc.portal.Schedule$PlaceholderFragment" >
+
+    <View
+        android:id="@+id/mainblock"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#073068" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/mainblock"
+        android:background="#bdab04" />
+
+    <TextView
+        android:id="@+id/textViewBlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Period Test"
+        android:textColor="#ffffff"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/textViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainblock"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:text="Time Test"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#073068" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/view1" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/textViewSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:text="Regular Day" />
+
+</RelativeLayout>
