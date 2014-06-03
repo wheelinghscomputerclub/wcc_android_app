@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.whs"
+    package="org.d214.whs.wcc.portal"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -28,7 +28,7 @@
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.whsWHS" />
+                android:value="org.d214.whs.wcc.portalWHS" />
         </activity>
         <activity
             android:name="org.d214.whs.wcc.portal.Events"
@@ -37,7 +37,7 @@
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.whsWHS" />
+                android:value="org.d214.whs.wcc.portalWHS" />
         </activity>
         <activity
             android:name="org.d214.whs.wcc.portal.Announcements"
@@ -46,7 +46,7 @@
             android:screenOrientation="portrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.whsWHS" />
+                android:value="org.d214.whs.wcc.portalWHS" />
         </activity>
         <activity
             android:name="org.d214.whs.wcc.portal.Read"
@@ -73,7 +73,7 @@
         </activity>
 
         <!--
-        <receiver android:name="com.example.whs.CurrentMoodWidgetProvider" >
+        <receiver android:name="org.d214.whs.wcc.portal.CurrentMoodWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 

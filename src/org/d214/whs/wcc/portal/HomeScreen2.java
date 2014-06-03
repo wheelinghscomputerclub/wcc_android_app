@@ -28,7 +28,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.whs.R;
+import org.d214.whs.wcc.portal.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;

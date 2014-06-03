@@ -1,5 +1,5 @@
 package org.d214.whs.wcc.portal;
-//package com.example.whs;
+//package org.d214.whs.wcc.portal;
 //
 //import java.io.InputStream;
 //import java.lang.reflect.Type;

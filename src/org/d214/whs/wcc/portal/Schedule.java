@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.whs.R;
+import org.d214.whs.wcc.portal.R;
 
 
 public class Schedule extends Activity

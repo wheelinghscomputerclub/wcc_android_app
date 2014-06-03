@@ -2,7 +2,7 @@ package org.d214.whs.wcc.portal;
 
 import java.util.List;
 
-import com.example.whs.R;
+import org.d214.whs.wcc.portal.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;

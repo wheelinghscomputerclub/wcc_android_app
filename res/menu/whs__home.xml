@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.whs.WHS_Home" >
+    tools:context="org.d214.whs.wcc.portal.WHS_Home" >
 
     <item
         android:id="@+id/action_Setting"
