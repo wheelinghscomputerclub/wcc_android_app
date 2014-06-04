@@ -254,6 +254,8 @@ public class HomeScreen2 extends ListFragment{
 				daysLeftLabel.setText("Today");
 			else if (difference == 1)
 				daysLeftLabel.setText("Tomorrow");
+			else if (difference < 0)
+				daysLeftLabel.setText("Complete");
 			else
 				daysLeftLabel.setText(String.valueOf(difference) + " days left");
 		}
