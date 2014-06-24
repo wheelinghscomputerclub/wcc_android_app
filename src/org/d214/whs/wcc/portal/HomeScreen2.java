@@ -167,36 +167,38 @@ public class HomeScreen2 extends ListFragment{
 			SharedPreferences settings = getActivity().getSharedPreferences("WCCAppPrefs", 0);
 			SharedPreferences.Editor editor = settings.edit();
 			
-			UpcomingEvent event = listEvents[0];
 			load.setVisibility(0X00000004);
 			if(listEvents.length == 0 || listEvents == null){
 				reload.setVisibility(0);
 				reload.setText("No upcomming events");
 			}
-			else if(event == null || event.eventDate == null || event.eventDate.equals("")){
+			else{
+				UpcomingEvent event = listEvents[0];
+				if(event == null || event.eventDate == null || event.eventDate.equals("")){
 				reload.setVisibility(0);
 				reload.setText("No upcomming events (click to reload)");
-			}else{
-			dateLabel.setText(event.eventDate);
-			messageLabel.setText(event.eventTitle);
-			
-			for (UpcomingEvent e: listEvents){
-				if(e.eventDate.substring(0, 2).equalsIgnoreCase("th")){
-					if(e.eventTitle.contains("Gold")){
-						editor.putInt("late", 1);
-						break;
-					}
-					else if(e.eventTitle.contains("Blue")){
-						editor.putInt("late", 2);
-						break;
-					}
-					else if(e.eventTitle.contains("Exam")){
-						editor.putInt("late", 3);
-						break;
+				}else{
+				dateLabel.setText(event.eventDate);
+				messageLabel.setText(event.eventTitle);
+				reload.setVisibility(0X00000004);
+				
+				for (UpcomingEvent e: listEvents){
+					if(e.eventDate.substring(0, 2).equalsIgnoreCase("th")){
+						if(e.eventTitle.contains("Gold")){
+							editor.putInt("late", 1);
+							break;
+						}
+						else if(e.eventTitle.contains("Blue")){
+							editor.putInt("late", 2);
+							break;
+						}
+						else if(e.eventTitle.contains("Exam")){
+							editor.putInt("late", 3);
+							break;
+						}
 					}
 				}
-			}
-			editor.commit();
+				editor.commit();
 			
 			SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dddd, yyyy");
 			Calendar cal = Calendar.getInstance();
@@ -233,6 +235,7 @@ public class HomeScreen2 extends ListFragment{
 			}
 		}
 		
+	}
 	}
 	
 	
