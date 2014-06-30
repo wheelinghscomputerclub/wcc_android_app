@@ -152,6 +152,7 @@ public class HomeScreen3 extends ListFragment{
 			List<DailyAnnouncements> temp = new ArrayList<DailyAnnouncements>();
 			
 			load.setVisibility(0X00000004);
+			reload.setVisibility(0X00000004);
 			
 			if(listAnn == null || listAnn.length == 0){
 				reload.setVisibility(0);
