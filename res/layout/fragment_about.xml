@@ -24,7 +24,7 @@
         android:layout_below="@+id/imageView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Version 1.0"
+        android:text="Version 1.1"
         android:textColor="#444444" />
 
     <TextView
