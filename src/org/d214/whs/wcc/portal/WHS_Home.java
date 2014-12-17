@@ -2,8 +2,6 @@ package org.d214.whs.wcc.portal;
 
 import java.util.Locale;
 
-import org.d214.whs.wcc.portal.R;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,6 +25,9 @@ import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.whs.R;
 
 public class WHS_Home extends FragmentActivity{
 	
@@ -361,8 +362,23 @@ public class WHS_Home extends FragmentActivity{
 		if (item.getItemId() == R.id.action_about){
 			Intent intent1 = new Intent(WHS_Home.this, About.class);
 			startActivity(intent1);
-		}
-		else{
+		}else if(item.getItemId() == R.id.action_school){
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle(HomeScreen1.status);
+			builder.setMessage("Check back in 15 minutes for updated results");
+			
+			builder.setPositiveButton("Close", new OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+
+				}
+			});
+
+			
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}else{
 			Intent intent2 = new Intent(WHS_Home.this, Schedule.class);
 			startActivity(intent2);
 		}

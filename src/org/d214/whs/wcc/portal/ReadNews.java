@@ -1,7 +1,7 @@
 package org.d214.whs.wcc.portal;
 
 
-import org.d214.whs.wcc.portal.R;
+import com.example.whs.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

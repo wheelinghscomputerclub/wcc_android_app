@@ -1,13 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="org.d214.whs.wcc.portal.WHS_Home" >
+    tools:context="com.example.whs.WHS_Home" >
 
     <item
-        android:id="@+id/action_Setting"
+        android:id="@+id/action_schedule"
         android:orderInCategory="100"
         android:showAsAction="always"
         android:title="Schedule"
         android:icon="@drawable/ic_action_schedule"/>
+    
+    <item
+        android:id="@+id/action_school"
+        android:orderInCategory="1"
+        android:showAsAction="always"
+        android:title="Emergency School Closings"
+        android:icon="@drawable/ic_action_school"/>
 	
     <item
         android:id="@+id/action_about"

@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Random;
 
-import org.d214.whs.wcc.portal.R;
+import com.example.whs.R;
 
 import android.app.Service;
 import android.appwidget.AppWidgetManager;

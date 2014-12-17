@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.d214.whs.wcc.portal.R;
+import com.example.whs.R;
 
 
 public class Schedule extends Activity
@@ -143,10 +143,7 @@ public class Schedule extends Activity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        
         return super.onOptionsItemSelected(item);
     }
 
@@ -247,15 +244,15 @@ public class Schedule extends Activity
             blueBlocks.add(new Period("Block D", "1:46", "2:50"));
     		
             exam1Periods.add(new Period("Period 1", "7:30", "8:20"));
-            exam1Periods.add(new Period("Period 2", "8:25", "9:20"));
-            exam1Periods.add(new Period("Period 5", "9:30", "10:20"));
-            exam1Periods.add(new Period("Period 6", "10:25", "11:15"));
-            exam1Periods.add(new Period("Period 7", "11:20", "12:10"));
+            exam1Periods.add(new Period("Period 2", "8:25", "9:15"));
+            exam1Periods.add(new Period("Period 5", "9:25", "10:15"));
+            exam1Periods.add(new Period("Period 6", "10:20", "11:10"));
+            exam1Periods.add(new Period("Period 7", "11:15", "12:05"));
     		
             exam2Periods.add(new Period("Period 3", "7:30", "8:20"));
-            exam2Periods.add(new Period("Period 4", "8:25", "9:20"));
-            exam2Periods.add(new Period("Period 8", "9:30", "10:20"));
-            exam2Periods.add(new Period("Period 9", "10:25", "11:15"));
+            exam2Periods.add(new Period("Period 4", "8:25", "9:15"));
+            exam2Periods.add(new Period("Period 8", "9:25", "10:15"));
+            exam2Periods.add(new Period("Period 9", "10:20", "11:10"));
     		
             mayPeriods.add(new Period("Period 1", "7:25", "8:09"));
             mayPeriods.add(new Period("Period 2", "8:14", "8:57"));
@@ -352,13 +349,14 @@ public class Schedule extends Activity
     		}
     		
     		findPeriod(schedules[today]);
+    		
     		handler = new Handler();
     		Runnable runnable = new Runnable(){
     			@Override
     			public void run() {
     				while (running){
     					try{
-    						Thread.sleep(60000);
+    						Thread.sleep(10000);
     					} catch(InterruptedException e){
     						e.printStackTrace();
     					}
@@ -394,14 +392,17 @@ public class Schedule extends Activity
     		if (day == Calendar.SATURDAY || day == Calendar.SUNDAY)
     			school = 1;
     		else if (date.getHours() > 12){
-    			time = (date.getHours() * 60) + date.getMinutes();
+    			time = ((date.getHours()-12) * 60) + date.getMinutes();
     			m = Integer.parseInt(endTime.substring(endTime.length() - 2));
 				h = Integer.parseInt(endTime.substring(0, endTime.length() - 3));
 				t = (h * 60) + m;
-    			if (time > t)
+				int day2 = cal.get(Calendar.DAY_OF_WEEK);
+				if(day2 == Calendar.FRIDAY)
+					school = 1;
+				else if (time > t)
     				school = 2;
-    			else
-    				time = ((date.getHours() - 12) * 60) + date.getMinutes();
+    			//else
+    				//time = ((date.getHours() - 12) * 60) + date.getMinutes();
     		} else{
     			time = (date.getHours() * 60) + date.getMinutes();
     			m = Integer.parseInt(startTime.substring(startTime.length() - 2));

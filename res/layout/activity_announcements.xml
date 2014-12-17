@@ -79,7 +79,6 @@
         android:textColor="#999999"
         android:textSize="17sp"
         android:text="Reload" />
-
     
 
 </RelativeLayout>

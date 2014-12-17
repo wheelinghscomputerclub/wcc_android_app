@@ -27,7 +27,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.d214.whs.wcc.portal.R;
+import com.example.whs.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -152,11 +152,13 @@ public class HomeScreen3 extends ListFragment{
 			List<DailyAnnouncements> temp = new ArrayList<DailyAnnouncements>();
 			
 			load.setVisibility(0X00000004);
-			reload.setVisibility(0X00000004);
 			
 			if(listAnn == null || listAnn.length == 0){
 				reload.setVisibility(0);
-				reload.setText("No announcements (click to reload)");
+				reload.setText("No announcements (click to refresh)");
+			}else if(listAnn[0].text.equalsIgnoreCase("ERRORERROR")){
+				reload.setVisibility(0);
+				reload.setText("No announcements (click to refresh)");
 			}else{
 				for (DailyAnnouncements event: listAnn){
 					//temp.add(event.eventTitle);

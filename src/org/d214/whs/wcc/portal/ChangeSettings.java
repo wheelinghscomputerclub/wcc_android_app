@@ -3,7 +3,7 @@ package org.d214.whs.wcc.portal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.d214.whs.wcc.portal.R;
+import com.example.whs.R;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;

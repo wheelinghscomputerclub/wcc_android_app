@@ -1,6 +1,6 @@
 package org.d214.whs.wcc.portal;
 
-import org.d214.whs.wcc.portal.R;
+import com.example.whs.R;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -76,10 +76,8 @@ public class Schedule2 extends Activity implements
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
+		
+		
 		return super.onOptionsItemSelected(item);
 	}
 
